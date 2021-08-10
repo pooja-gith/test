@@ -1,0 +1,105 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Product filter</title>
+    <link rel="stylesheet" href="portfolio-style.css" />
+  </head>
+  <body>
+    <section>
+      <ul>
+        <li class="list active" data-filter="all">All</li>
+        <li class="list" data-filter="camera">Camera</li>
+        <li class="list" data-filter="watch">Watch</li>
+        <li class="list" data-filter="headphone">Headphone</li>
+      </ul>
+      <div class="product">
+        <div class="itemBox camera">
+          <img
+            src="C:\Users\ashis\Desktop\opleding\portfolio gallery\images\camera.jpg"
+          />
+        </div>
+        <div class="itemBox watch">
+          <img
+            src="C:\Users\ashis\Desktop\opleding\portfolio gallery\images\watch.jfif"
+          />
+        </div>
+        <div class="itemBox headphone">
+          <img
+            src="C:\Users\ashis\Desktop\opleding\portfolio gallery\images\headphone.jpg"
+          />
+        </div>
+        <div class="itemBox camera">
+          <img
+            src="C:\Users\ashis\Desktop\opleding\portfolio gallery\images\camera-2.jpg"
+          />
+        </div>
+        <div class="itemBox watch">
+          <img
+            src="C:\Users\ashis\Desktop\opleding\portfolio gallery\images\watch-2.jpg"
+          />
+        </div>
+        <div class="itemBox headphone">
+          <img
+            src="C:\Users\ashis\Desktop\opleding\portfolio gallery\images\headphone-2.jpg"
+          />
+        </div>
+        <div class="itemBox camera">
+          <img
+            src="C:\Users\ashis\Desktop\opleding\portfolio gallery\images\camera-3.jfif"
+          />
+        </div>
+        <div class="itemBox watch">
+          <img
+            src="C:\Users\ashis\Desktop\opleding\portfolio gallery\images\watch-3.jpg"
+          />
+        </div>
+        <div class="itemBox headphone">
+          <img
+            src="C:\Users\ashis\Desktop\opleding\portfolio gallery\images\headphone-3.jpg"
+          />
+        </div>
+        <div class="itemBox camera">
+          <img
+            src="C:\Users\ashis\Desktop\opleding\portfolio gallery\images\camera-4.jpg"
+          />
+        </div>
+        <div class="itemBox watch">
+          <img
+            src="C:\Users\ashis\Desktop\opleding\portfolio gallery\images\watch-4.jpg"
+          />
+        </div>
+        <div class="itemBox headphone">
+          <img
+            src="C:\Users\ashis\Desktop\opleding\portfolio gallery\images\headphone-4.jfif"
+          />
+        </div>
+      </div>
+    </section>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".list").click(function () {
+          const value = $(this).attr("data-filter");
+          if (value == "all") {
+            $(".itembox").show("1000");
+          } else {
+            $(".itembox")
+              .not("." + value)
+              .hide("1000");
+            $(".itembox")
+              .filter("." + value)
+              .show("1000");
+          }
+        });
+        // add active class on selected item
+        $(".list").click(function () {
+          $(this).addClass("active").siblings().removeClass("active");
+        });
+      });
+    </script>
+  </body>
+</html>
