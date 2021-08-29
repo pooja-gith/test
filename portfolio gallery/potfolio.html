@@ -3,15 +3,28 @@
     <meta charset="utf-8" />
     <title>Product filter</title>
     <link rel="stylesheet" href="portfolio-style.css" />
+    <link rel="stylesheet" href="searchbar-style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body>
     <section>
-      <ul>
-        <li class="list active" data-filter="all">All</li>
-        <li class="list" data-filter="camera">Camera</li>
-        <li class="list" data-filter="watch">Watch</li>
-        <li class="list" data-filter="headphone">Headphone</li>
-      </ul>
+      <div class="topnav">
+        <ul>
+          <li class="list active" data-filter="all">All</li>
+          <li class="list" data-filter="camera">Camera</li>
+          <li class="list" data-filter="watch">Watch</li>
+          <li class="list" data-filter="headphone">Headphone</li>
+        </ul>
+        <div class="search-container">
+          <form action="/action_page.php">
+            <input type="text" placeholder="Search.." name="search" />
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+      </div>
       <div class="product">
         <div class="itemBox camera">
           <img

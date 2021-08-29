@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styelesheet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"
+    ></script>
+    <title>Pooja's Icecreams</title>
+  </head>
+  <body>
+    <nav>
+      <h1>Pooja's Icecreams</h1>
+      <ul class="nav-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Team</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <section class="grid-container">
+      <class class="left-side container">
+        <div class="item1"></div>
+        <div class="item2"></div>
+        <div class="item3"></div>
+
+        <div class="item-a">
+          <h3>vanilla</h3>
+          <p>As good as simple</p>
+        </div>
+        <div class="item-b">
+          <h3>Chocholate</h3>
+          <p>Happiness that you ca eat</p>
+        </div>
+        <div class="item-c">
+          <h3>Strawberry</h3>
+          <p>One of my favourite</p>
+        </div>
+      </class>
+      <div class="right-side-container">
+        <video id="background-video" autoplay loop muted>
+          <source src="icecreamvideo.mp4" type="video/mp4" />
+        </video>
+      <div class="select1">
+        <h1>Choose your flavours!</h1>
+        <br />
+        <p>You can Combine all the 3 Flavours in your Icecream!</p>
+        <br />
+        <h4>How Would You Like Your Icecream?</h4>
+        <br />
+        <form class="alertSubmit" action="result.html" method="Get">
+            <div>
+                <input
+                  type="radio"
+                  id="cup"
+                  required
+                  name="Recipient"
+                  value="cup"
+                />
+                  <label for="cup">Cup</label><br />
+                <input type="radio" id="cone" name="Recipient" value="cone" />  
+                <label for="cone">Cone</label><br />
+                <br />
+              </div>
+              <div>
+                <label for="first flavour">First Flavour</label>
+                <select name="first flavour" id="first flavour">
+                  <option value="None">None</option>
+                  <option value="Vanilla">Vanilla</option>
+                  <option value="Chocholate">Chocholate</option>
+                  <option value="Strawberry">Strawberry</option>
+                            ><br /><br /><br >
+
+                <label for="first flavour">Second Flavour</label>
+                <select name="second flavour" id="second flavour">
+                  <option value="None">None</option>
+                  <option value="Vanilla">Vanilla</option>
+                  <option value="Chocholate">Chocholate</option>
+                  <option value="Strawberry">Strawberry</option>
+                  ><br /><br /><br >
+                <label for="first flavour">Third Flavour</label>
+                <select name="third flavour" id="third flavour">
+                  <option value="None">None</option>
+                  <option value="Vanilla">Vanilla</option>
+                  <option value="Chocholate">Chocholate</option>
+                  <option value="Strawberry">Strawberry</option>
+                  
+                  ><br /><br /><br >
+              </div>
+              <button type="submit">Submit</button>
+              <button type="reset">Reset</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!--Checkout-->
+    <!-- <section class="checkout">CHECK OUT OPTIONS</section> -->
+
+    <!-- Foot-->
+    <footer>
+      <div class="copyright">Copyright 2021</div>
+    </footer>
+  </body>
+  <script src="/app.js"></script>
+</html>
