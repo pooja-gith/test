@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+      integrity="sha512-9BwLAVqqt6oFdXohPLuNHxhx36BVj5uGSGmizkmGkgl3uMSgNalKc/smum+GJU/TTP0jy0+ruwC3xNAk3F759A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Todo List</title>
+  </head>
+  <style>
+    * {
+      margin: Opx;
+      padding: Opx;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    li {
+      list-style-type: none;
+    }
+    body {
+      background: #f6d365;
+      color: white;
+      min-height: 100vh;
+    }
+    form {
+      min-height: 20vh;
+      flex-direction: column;
+    }
+
+    input {
+      padding: 1rem;
+      font-size: 2rem;
+      height: 40px;
+      width: calc(200px + 10vw);
+      background: white;
+      border: none;
+      border-radius: 5px 0px 0px 5px;
+    }
+    .todo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 40px;
+      border: none;
+      margin: 0.5rem;
+    }
+
+    .todo-container {
+      margin-left: -40px;
+    }
+
+    .todo-item {
+      font-size: 1rem;
+      padding: 1rem;
+      height: 40px;
+      width: calc(200px + 10vw);
+      background: rgba(255, 255, 255, 0.5);
+      color: gray;
+      border: none;
+      border-radius: 5px 0px 0px 5px;
+    }
+    button {
+      color: white;
+      background: greenyellow;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      transition: all 0.6s ease;
+    }
+
+    .fa-trash,
+    .fa-check {
+      pointer-events: none;
+    }
+
+    .complete-btn,
+    .trash-btn {
+      height: 40px;
+      width: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .h1 {
+      width: 100%;
+      text-align: center;
+      padding: 2rem;
+      font-size: 2rem;
+    }
+
+    .inputcont {
+      display: flex;
+    }
+
+    .centerer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .complete-btn:hover {
+      background: lime;
+      color: green;
+    }
+
+    .trash-btn {
+      background: red;
+      color: beige;
+      border-radius: 0px 5px 5px 0px;
+    }
+
+    .trash-btn:hover {
+      background: orange;
+      color: red;
+    }
+
+    i {
+      font-size: 1rem;
+    }
+    /* getting rid of ugly focus border */
+    input:focus {
+      outline: 0px;
+    }
+  </style>
+
+  <body>
+    <form class="centerer" action="#">
+      <div class="h1">Pooja's Todo List</div>
+      <div class="inputcont">
+        <input type="text" class="todo-input" />
+        <button type="submit" class="complete-btn">+</button
+        ><button class="trash-btn">
+          <i class="fa fa-trash" aria-hidden="true"></i>
+        </button>
+      </div>
+    </form>
+    <div class="todo-container centerer">
+      <ul class="todo-list"></ul>
+    </div>
+
+    <!-- <div class="todo"></div>
+    <li></li>
+    <button></button>
+    <button></button> -->
+    <script>
+      const todoInput = document.querySelector(".todo-input");
+      const todoButton = document.querySelector(".complete-btn");
+      const todoList = document.querySelector(".todo-list");
+      todoButton.addEventListener("click", addTodo);
+      todoList.addEventListener("click", deleteCheck);
+
+      function addTodo(e) {
+        // <!-- to stop form from refreshing (or type=button) -->
+        console.log(" addTodochecker");
+        e.preventDefault();
+        // create Todo Div
+        const todoDiv = document.createElement("div");
+        todoDiv.classList.add("todo");
+        // create LI
+        const newTodo = document.createElement("li");
+        newTodo.innerText = todoInput.value;
+        newTodo.classList.add("todo-item");
+        todoDiv.appendChild(newTodo);
+        //making child-element to firstTodo
+        // create checkmark btn
+        const completedButton = document.createElement("button");
+        completedButton.innerHTML = '<i class="fas fa-check"></i>';
+        completedButton.classList.add("complete-btn");
+        todoDiv.appendChild(completedButton);
+        //making child-element to firstTodo
+        // create trashbtn
+        // why simple and double quotes
+        const trashButton = document.createElement("button");
+        trashButton.innerHTML = '<i class="fas fa-trash"></i>';
+        trashButton.classList.add("trash-btn");
+        todoDiv.appendChild(trashButton);
+        //making child-element to firstTodo
+        todoList.appendChild(todoDiv);
+        //clear first input
+        todoInput.value = "";
+      }
+
+      function deleteCheck(e) {
+        console.log(e.target);
+        const item = e.target;
+      }
+    </script>
+  </body>
+</html>
