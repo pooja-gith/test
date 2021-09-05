@@ -1,55 +1,100 @@
 <!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        border: 1px solid #e7e7e7;
+        background-color: #f3f3f3;
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: #666;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover:not(.active) {
+        background-color: #ddd;
+      }
+
+      li a.active {
+        color: white;
+        background-color: #04aa6d;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li><a class="active" href="#home">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </body>
+</html>
+
+<!--<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styelesheet.css" />
+    <link rel="stylesheet" href="./styelesheet.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <script
       defer
       src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"
     ></script>
     <title>Pooja's Icecreams</title>
   </head>
-  <body>
     <nav>
-      <h1>Pooja's Icecreams</h1>
+      <div class="logo">
+      <h4>Pooja's Icecreams</h4></div>
+      <nav>
+        <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
       <ul class="nav-links">
         <li><a href="#">About</a></li>
         <li><a href="#">Team</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
     </nav>
-
-    <section class="grid-container">
+   <section class="grid-container">
       <class class="left-side container">
-        <div class="item1"></div>
-        <div class="item2"></div>
-        <div class="item3"></div>
-
-        <div class="item-a">
+        <div class="item1"><img id="vanillaicecreamimg" src="./imges/vanilla.jpg" alt="vanillaimg"><div class="item-a">
           <h3>vanilla</h3>
           <p>As good as simple</p>
-        </div>
-        <div class="item-b">
+        </div></div>
+        <div class="item2"><img id="chocholateimg" src="./imges/chocholate icecream.jpg" alt="chocholateimg"><div class="item-b">
           <h3>Chocholate</h3>
-          <p>Happiness that you ca eat</p>
+          <p>Happiness that you can eat</p>
         </div>
-        <div class="item-c">
+        <div class="item3"></div><img id="strawberryimg" src="./imges/strawberry ic cone.jfif" alt="strawberryimg"><div class="item-c">
           <h3>Strawberry</h3>
           <p>One of my favourite</p>
         </div>
       </class>
       <div class="right-side-container">
-        <video id="background-video" autoplay loop muted>
-          <source src="icecreamvideo.mp4" type="video/mp4" />
-        </video>
       <div class="select1">
         <h1>Choose your flavours!</h1>
         <br />
@@ -57,9 +102,9 @@
         <br />
         <h4>How Would You Like Your Icecream?</h4>
         <br />
-        <form class="alertSubmit" action="result.html" method="Get">
+        <form id="mainframe"class="alertSubmit" action="result.html">
             <div>
-                <input
+                <input class="typesOfIcecreams"
                   type="radio"
                   id="cup"
                   required
@@ -77,39 +122,38 @@
                   <option value="None">None</option>
                   <option value="Vanilla">Vanilla</option>
                   <option value="Chocholate">Chocholate</option>
-                  <option value="Strawberry">Strawberry</option>
-                            ><br /><br /><br >
-
+                  <option value="Strawberry">Strawberry</option></select
+                            ><br /><br /><br />
                 <label for="first flavour">Second Flavour</label>
                 <select name="second flavour" id="second flavour">
                   <option value="None">None</option>
                   <option value="Vanilla">Vanilla</option>
                   <option value="Chocholate">Chocholate</option>
-                  <option value="Strawberry">Strawberry</option>
-                  ><br /><br /><br >
+                  <option value="Strawberry">Strawberry</option></select
+                  ><br /><br /><br />
                 <label for="first flavour">Third Flavour</label>
                 <select name="third flavour" id="third flavour">
                   <option value="None">None</option>
                   <option value="Vanilla">Vanilla</option>
                   <option value="Chocholate">Chocholate</option>
-                  <option value="Strawberry">Strawberry</option>
-                  
-                  ><br /><br /><br >
-              </div>
-              <button type="submit">Submit</button>
-              <button type="reset">Reset</button>
-            </div>
-          </form>
+  <option value="Strawberry">Strawberry</option></select
+  ><br /><br />
+  <button type="submit">Submit</button><button type="reset">Reset</button>
+  </div>
+      </form>
         </div>
       </div>
+      <div class="right-side-container">
+        <h3>Your selection <span id="result">Test</span></h3>
+      </div>
     </section>
-    <!--Checkout-->
-    <!-- <section class="checkout">CHECK OUT OPTIONS</section> -->
+    Checkout
+    < <section class="checkout">CHECK OUT OPTIONS</section> -->
 
-    <!-- Foot-->
+<!-- Foot
     <footer>
       <div class="copyright">Copyright 2021</div>
     </footer>
   </body>
   <script src="/app.js"></script>
-</html>
+</html>-->
